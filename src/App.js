@@ -1,22 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Context from './context'
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
 import './app.css'
 
 function App() {
-  let todos = [
-    {id: 1, completed: true, taskName: 'Create todo input'},
-    {id: 2, completed: false, taskName: 'Create todo list'},
-    {id: 3, completed: false, taskName: 'Create todo item'}
-  ]
+
+  let [todos, setTodos] = useState([])
+
+  let [inputState, setInputState] = useState('')
 
 
+  function todoCompleted(id) {
+    setTodos(
+      todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed
+        }
+        return todo
+      })
+    )
+  }
+
+  function todoDelete(id){
+    setTodos(
+      todos.filter(todo => { return todo.id !== id })
+    )
+  }
+
+  function createTask(taskName){
+    setTodos(todos.concat([
+      {
+      taskName,
+      id: todos.length + 1,
+      completed: false
+      }
+  ]))
+  setInputState('')
+  }
 
   return (
-    <div className="container">
-      <TodoInput />
-      <TodoList todos={todos}/>
-    </div>
+    <Context.Provider value={{todoCompleted, todoDelete, setInputState, createTask}}>
+      <div className="container">
+        <TodoInput inputState={inputState} />
+        <TodoList todos={todos} />
+      </div>
+    </Context.Provider>
+
   );
 }
 

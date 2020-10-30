@@ -9,10 +9,10 @@
       justify-content: space-between;
     }
     .itemCompleted{
-        border-left: 2px green;
+        border-left: 4px solid green;
     }
     .itemNoCompleted{
-        border-left: 2px solid grey;
+        border-left: 4px solid grey;
     }
     .id {
         padding-right: 10px;
