@@ -1,0 +1,40 @@
+    .todoitem {
+      margin-top: 10px;
+      align-items: center;
+      width: 700px;
+      height: 40px;
+      box-sizing: border-box;
+      padding: 0 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .itemCompleted{
+        border-left: 2px green;
+    }
+    .itemNoCompleted{
+        border-left: 2px solid grey;
+    }
+    .id {
+        padding-right: 10px;
+    }
+    .ok {
+        color: green;
+        cursor: pointer;
+    }
+    .ok:hover {
+        border-bottom: 1px solid green;
+    }
+    .ok:active{
+        border-top: 1px solid green;
+    }
+    
+    .delete {
+        color: red;
+        cursor: pointer;
+    }
+    .delete:hover{
+        border-bottom: 1px solid red;
+    }
+    .delete:active{
+        border-top: 1px solid red;
+    }
