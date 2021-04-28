@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Context from './context'
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
-import './app.css'
+//import './app.css'
 
 function App() {
 
